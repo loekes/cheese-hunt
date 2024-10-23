@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Background.png" type="Texture" id=1]
+[ext_resource path="res://UI_Font.tres" type="DynamicFontData" id=2]
+[ext_resource path="res://CheeseIcon.png" type="Texture" id=3]
+[ext_resource path="res://FredokaOne-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Menu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+extra_spacing_top = 50
+font_data = ExtResource( 4 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background2" type="TextureRect" parent="."]
+margin_top = 160.0
+margin_right = 320.0
+margin_bottom = 320.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Content" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content"]
+margin_left = 83.0
+margin_right = 236.0
+margin_bottom = 180.0
+alignment = 1
+
+[node name="Title" type="HBoxContainer" parent="Content/VBoxContainer"]
+margin_top = 48.0
+margin_right = 153.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="Cheese" type="TextureRect" parent="Content/VBoxContainer/Title"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 20.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Content/VBoxContainer/Title"]
+margin_left = 37.0
+margin_right = 135.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Cheese Hunt"
+
+[node name="Instructions" type="HBoxContainer" parent="Content/VBoxContainer"]
+margin_top = 72.0
+margin_right = 153.0
+margin_bottom = 132.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Content/VBoxContainer/Instructions"]
+margin_right = 153.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 2 )
+text = "- press the spacebar to start playing -"
